@@ -141,7 +141,7 @@ header li {
 
 header ol {
   list-style: none;
-  padding: 0;
+  padding: 0 0 25px 0;
 }
 
 header ul a {
@@ -275,6 +275,12 @@ footer {
   
   header ul {
     display:none;
+  }
+}
+
+@media print, screen and (max-height: 550px) {
+  footer {
+    display: none;
   }
 }
 
