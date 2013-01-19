@@ -215,6 +215,58 @@ footer {
   bottom:50px;
 }
 
+.schools {
+  width: 500px;
+  display: block;
+}
+
+.school {
+float: left;
+padding: 0 25px 15px 0;
+}
+
+.school strong {
+  font-size: 14px;
+  color: #555;
+}
+
+.jobs {
+  width: 500px;
+  display: block;
+}
+
+.job {
+float: left;
+padding: 0 25px 15px 0;
+}
+
+.job strong {
+  font-size: 14px;
+  color: #555;
+}
+
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+ 
+.clearfix {
+  display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+  display: block;
+}
+ 
+* html .clearfix {
+  height: 1%;
+}
+
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {
@@ -249,6 +301,7 @@ footer {
     top:52px;
   }
 }
+
 
 @media print, screen and (max-width: 720px) {
   body {
