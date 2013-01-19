@@ -141,6 +141,7 @@ header li {
 
 header ol {
   list-style: none;
+  padding: 0;
 }
 
 header ul a {
