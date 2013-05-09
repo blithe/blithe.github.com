@@ -1,0 +1,22 @@
+---
+layout: post
+title: Model-view-controller (MVC)
+---
+
+<h1>Model-view-controller (MVC)</h1>
+
+
+
+
+<p>I wanted to review the <a href="http://en.wikipedia.org/wiki/Modelviewcontroller">MVC</a> concept so I took a look back at <a href="https://twitter.com/mhartl">Michael Hartl</a>'s Ruby on Rails Tutorial, specifically chapter <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#sec-mvc">1.2.6</a>. I particularly like the text and the picture for conveying the information. Reposting here for future reference.</p>
+<blockquote>
+<div>
+<div>
+<p>When interacting with a Rails application, a browser sends a <em>request</em>, which is received by a web server and passed on to a Rails <em>controller</em>, which is in charge of what to do next. In some cases, the controller will immediately render a <em>view</em>, which is a template that gets converted to HTML and sent back to the browser. More commonly for dynamic sites, the controller interacts with a <em>model</em>, which is a Ruby object that represents an element of the site (such as a user) and is in charge of communicating with the database. After invoking the model, the controller then renders the view and returns the complete web page to the browser as HTML.</p>
+<p><img alt="image" src="http://media.tumblr.com/7d9c7f4c22c72634f2b6a6437c9fae9d/tumblr_inline_mgzhh6yF1w1qzerbw.png" /></p>
+</div>
+</div>
+</blockquote>
+<div>
+<p>Section <a href="http://ruby.railstutorial.org/chapters/a-demo-app#sec-mvc_in_action">2.2.2</a> is also helpful at showing MVC in action and how the information is passed between the browser, database, model, view, and controller.&nbsp;</p>
+</div>

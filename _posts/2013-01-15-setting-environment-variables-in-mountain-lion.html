@@ -1,0 +1,12 @@
+---
+layout: post
+title: Setting Environment Variables in Mountain Lion
+---
+
+<h1>Setting Environment Variables in Mountain Lion</h1>
+
+
+<p>Putting this here mostly so I can find it in the future.&nbsp;</p>
+<p>I had to set some <a href="http://en.wikipedia.org/wiki/Environment_variable">environment variables</a> so that I could use my development environment on my MacBook Air to upload files to my <a href="http://aws.amazon.com/s3/">Amazon Simple Storage Service</a> (S3) account via the <a href="https://github.com/thoughtbot/paperclip">paperclip</a> gem.&nbsp;</p>
+<p>Most of the directions I found said that I needed to set the variables by adding "export VARIABLE=value" or "setenv VARIABLE value" to the .bash_profile. These suggestions didn't work for me of course.&nbsp;</p>
+<p>Finally found the answer on <a href="http://apple.stackexchange.com/a/73818/39683">Stack Exchange</a>&nbsp;thanks to help from <a href="https://twitter.com/rochers">Scott</a>. I had to edit the /etc/launchd.conf file to add "setenv VARIABLE value". &nbsp;</p>
