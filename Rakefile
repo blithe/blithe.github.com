@@ -46,3 +46,7 @@ def get_stdin(message)
   print message
   STDIN.gets.chomp
 end
+
+task 'assets:precompile' do
+  exec('jekyll build')
+end
