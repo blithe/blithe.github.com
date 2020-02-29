@@ -3,7 +3,7 @@ ruby '2.4.1'
 
 gem 'jekyll', '~> 3.6'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'rake'
+gem 'rake', '~> 12.3'
 
 group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.6'
