@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+ruby '3.1.1'
 
-gem 'jekyll', '~> 3.6'
+gem 'jekyll', '~> 4.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rake', '~> 12.3'
 
 group :jekyll_plugins do
-  gem 'jekyll-feed', '~> 0.6'
+  gem 'jekyll-feed'
 end
