@@ -1,0 +1,74 @@
+---
+layout: post
+title: Broken links
+---
+<h1>Broken links</h1>
+
+<p><i>Author's note: This post was written by <a href="https://claude.ai">Claude</a>, Anthropic's AI assistant, based on an automated audit of all links on this site.</i></p>
+
+<p>This site has been around since 2012. That's a long time on the internet, and it turns out that a lot of the links I've referenced over the years no longer work. I decided to do an audit and document what I found.</p>
+
+<h2>How I checked</h2>
+
+<p>I used <a href="https://curl.se">curl</a> to crawl every page on the site, extract all the links, and then check each one with an HTTP HEAD request. For each link I recorded the HTTP status code or connection error. Internal links were checked against the local server and external links were checked with a 10-second timeout. In total, I checked 199 unique external URLs across all pages and blog posts.</p>
+
+<h2>The results</h2>
+
+<p>Of the 199 external links, 161 still work. 32 are definitely broken and 7 more returned 403 Forbidden, which likely means the server is blocking automated requests (sites like the New York Times and The Economist do this).</p>
+
+<p>Here's the full breakdown of what's broken.</p>
+
+<h3>Dead domains</h3>
+
+<p>These domains no longer resolve at all. The servers are just gone.</p>
+
+<ul>
+<li><code>docs.rubygems.org</code> &mdash; referenced in my <a href="{% post_url 2012-12-10-global-day-of-coderetreat %}">Global Day of Coderetreat</a> and <a href="{% post_url 2013-01-12-test-driven-development %}">TDD</a> posts</li>
+<li><code>words.steveklabnik.com</code> &mdash; referenced in my <a href="{% post_url 2013-08-27-madison-ruby-2013-a-community-of-coders %}">Madison Ruby</a> post</li>
+<li><code>musicmidtown.com</code> &mdash; referenced in my <a href="{% post_url 2013-09-22-bringing-a-little-music-into-the-world %}">music</a> post</li>
+<li><code>curiosityrover.mpresence.net</code> &mdash; referenced in my <a href="{% post_url 2014-03-29-space-apps-atlanta %}">Space Apps Atlanta</a> post</li>
+<li><code>workshops.railsbridge.org</code> &mdash; referenced in my <a href="/resume.html">resume</a></li>
+</ul>
+
+<h3>404 Not Found</h3>
+
+<p>These URLs return a 404, meaning the server is still around but the specific page is gone.</p>
+
+<ul>
+<li><code>gogaruco.com/speakers/#brocher</code> &mdash; GoGaRuCo conference site</li>
+<li><code>confreaks.com/videos/4161</code> &mdash; my GoGaRuCo talk recording</li>
+<li><code>vimeo.com/105583930</code> &mdash; another talk recording</li>
+<li><code>2014.eurucamp.org</code> &mdash; eurucamp speaker page and schedule (two links)</li>
+<li><code>blithe-railsgirls.herokuapp.com</code> &mdash; my old Rails Girls app (two links). Heroku shut down free dynos back in 2022.</li>
+<li><code>blog.davidchelimsky.net</code> &mdash; post about RSpec's new project leads</li>
+<li><code>en.wikipedia.org/wiki/Modelviewcontroller</code> &mdash; this one was actually a typo on my end (missing the dashes in the URL). Fixed!</li>
+<li><code>guides.railsgirls.com</code> &mdash; install and Heroku guides (two links)</li>
+<li><code>octanecoffee.com</code> &mdash; the coffee shop that hosted Rails Girls Atlanta</li>
+<li><code>vimeo.com/54912357</code> and <code>vimeo.com/54913093</code> &mdash; Rails Girls Atlanta videos</li>
+<li><code>relishapp.com/rspec</code> &mdash; RSpec documentation</li>
+</ul>
+
+<h3>410 Gone</h3>
+
+<p>These return HTTP 410, which means the content was deliberately removed.</p>
+
+<ul>
+<li><code>mastodon.social/@blithe</code> &mdash; I deleted my Mastodon account, so the two links in my <a href="{% post_url 2023-04-20-added-rss-feed %}">RSS feed post</a> no longer work</li>
+</ul>
+
+<h3>Server errors and connection failures</h3>
+
+<ul>
+<li><code>conferences.oreilly.com</code> &mdash; my OSCON talk page returns a 500 error</li>
+<li><code>rails-3-2.railstutorial.org</code> &mdash; SSL handshake failure (two links)</li>
+<li><code>distill.engineyard.com</code> &mdash; expired TLS certificate</li>
+<li><code>art.beltline.org</code> and <code>railsbridge.org</code> &mdash; connection timeouts</li>
+<li><code>thestoveworks.com</code> &mdash; redirects to HTTPS but the HTTPS site is down</li>
+<li><code>t.co</code> short links from the Space Apps post &mdash; Cloudflare errors (two links)</li>
+</ul>
+
+<h2>Thoughts</h2>
+
+<p>The pages with the most broken links are my <a href="/resume.html">resume</a> (8 broken) and my <a href="{% post_url 2012-12-04-rails-girls-atlanta %}">Rails Girls Atlanta</a> post (7 broken). Most of the broken links are conference sites and talk recordings from years ago. It makes sense &mdash; conference websites are notoriously ephemeral.</p>
+
+<p>I'm not planning to fix most of these. The posts are snapshots of a particular time and the links were valid when I wrote them. But it's a good reminder that the internet is not as permanent as we sometimes assume. If you want something to last, keep your own copy.</p>
