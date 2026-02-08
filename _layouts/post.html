@@ -1,64 +1,36 @@
----
-layout: post
-title: Blithe Rocher, PhD
----
-
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} — Blithe Rocher, PhD</title>
 
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--BEGIN Google Analytics-->
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-29510072-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
-    <!--END Google Analytics-->
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <a href="https://blitherocher.s3.us-east-1.amazonaws.com/blithe3-big.jpeg"><img src="https://blitherocher.s3.us-east-1.amazonaws.com/blithe3-small.jpeg"></a>
-        <h1>Blithe Rocher, PhD</h1>
-        <p>Not your average engineering manager.</p>
-
-        <ol>
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="nav-inner">
+        <a href="/index.html" class="nav-name">Blithe Rocher, PhD</a>
+        <ul class="nav-links">
           <li><a href="/index.html">About</a></li>
           <li><a href="/blog.html">Blog</a></li>
           <li><a href="/resume.html">R&eacute;sum&eacute;</a></li>
-        </ol>
+        </ul>
+      </div>
+    </nav>
 
-        <ol>
-          <li><a href="http://www.linkedin.com/in/blitherocher/"><img src="https://s3.amazonaws.com/blitherocher/my-icons-collection/png/003-linkedin.png"></a></li>
-          <li><a href="http://www.github.com/blithe"><img src="https://s3.amazonaws.com/blitherocher/my-icons-collection/png/001-github-sign.png"></a></li>
-          <li><a href="https://www.instagram.com/blithephd/"><img src="https://s3.amazonaws.com/blitherocher/my-icons-collection/png/004-instagram.png"></a></li>
-        </ol>
-        <br>
-      </header>
-	  <section>
-	  	{{ content }}
-	  </section>
-		<footer>
-		    <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-		  </footer>
-    	</div>
-    <script src="javascripts/scale.fix.js"></script>
+    <!-- CONTENT -->
+    <main class="content">
+      <h2>{{ page.title }}</h2>
+      <p class="post-date" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">{{ page.date | date_to_long_string }}</p>
+      {{ content }}
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; {{ site.time | date: '%Y' }} Blithe Rocher</p>
+    </footer>
   </body>
 </html>
