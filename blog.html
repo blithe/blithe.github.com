@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Blithe Rocher | Blog
+title: Blithe Rocher, PhD | Blog
 ---
 
 <h2>Blog</h2>
 
-<ul>
+<ul class="post-list">
 	{% for post in site.posts %}
 		<li>
-			<span class="post-date">{{ post.date | date_to_string }}</span> 
 			<a href="{{ post.url }}">{{ post.title }}</a>
+			<span class="post-date">{{ post.date | date_to_string }}</span>
 		</li>
 	{% endfor %}
 </ul>
