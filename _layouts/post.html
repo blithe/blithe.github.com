@@ -1,36 +1,53 @@
-<!doctype html>
+---
+---
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }} — Blithe Rocher, PhD</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} — Blithe Rocher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/stylesheets/styles.css" />
+</head>
+<body class="page-post">
 
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
-  </head>
-  <body>
-    <!-- NAVIGATION -->
-    <nav>
-      <div class="nav-inner">
-        <a href="/index.html" class="nav-name">Blithe Rocher, PhD</a>
-        <ul class="nav-links">
-          <li><a href="/index.html">About</a></li>
-          <li><a href="/blog.html">Blog</a></li>
-          <li><a href="/resume.html">R&eacute;sum&eacute;</a></li>
-        </ul>
-      </div>
-    </nav>
+  <nav>
+    <a href="/">Blithe Rocher</a>
+  </nav>
 
-    <!-- CONTENT -->
-    <main class="content">
-      <h2>{{ page.title }}</h2>
-      <p class="post-date" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">{{ page.date | date_to_long_string }}</p>
+  <article class="article-wrapper">
+
+    <a href="/" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      Back to home
+    </a>
+
+    <header class="post-header">
+      <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+      <div class="accent-line"></div>
+    </header>
+
+    <div class="post-body">
       {{ content }}
-    </main>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>&copy; {{ site.time | date: '%Y' }} Blithe Rocher</p>
-    </footer>
-  </body>
+    <div class="post-footer">
+      <a href="/">← Back to home</a>
+      <span class="copy">&copy; 2026 Blithe Rocher</span>
+    </div>
+
+  </article>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
 </html>
