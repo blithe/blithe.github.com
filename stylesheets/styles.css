@@ -77,8 +77,8 @@
   --code-border: rgba(176, 190, 197, 0.08);
   --inline-code-bg: rgba(79, 195, 247, 0.08);
   --blockquote-bg: rgba(79, 195, 247, 0.04);
-  --toggle-bg: rgba(255, 255, 255, 0.08);
-  --toggle-hover: rgba(255, 255, 255, 0.15);
+  --toggle-bg: rgba(255, 255, 255, 0.12);
+  --toggle-hover: rgba(255, 255, 255, 0.22);
 }
 
 html {
@@ -164,10 +164,9 @@ nav a:hover {
   height: 18px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.5;
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transition: opacity 0.3s ease;
 }
 
 /* ── Shared ── */
